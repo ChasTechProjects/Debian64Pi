@@ -5,4 +5,8 @@ There is no 'universal' image that supports both the Pi 3 and 4, you must downlo
 
 The source code includes three stage scripts: stage1.sh sets up the image, installs Debian, modifies fstab, hostname, and sources.list, and installs the bootloader and kernel. stage2.sh installs core Debian packages into the image as well as WiFi drivers for the Pi's wireless capabilities. stage3.sh unmounts the mount points for the image, allowing the image to be flashed to your SD card.
 
-WIP.
+### Adapting a Pi 4 image to run on the Pi 3
+
+What stops a Pi 4 image from booting on the Pi 3 and vice versa is the kernel. Currently, there is no 64-bit kernel which runs at stable performance on the Pi and therefore two different images must be available.
+
+WIP
