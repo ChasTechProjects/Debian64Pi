@@ -31,6 +31,8 @@ Then, it's time to start the first script. Ensure your terminal session is worki
 
 <code>sudo ./stage1.sh</code>
 
+By default, this script will setup the Pi 4 kernel, meaning it will not work on the Pi 3. To change it to the Pi 3, comment all the Pi 4 kernel install lines in the script and uncomment all the Pi 3 kernel install lines. This will break Pi 4 functionality however, as there is no current universal build support.
+
 The script will setup a minimal Debian installation as well as the kernel and everything on the image. Once it's finished, you will be in the chroot environment, so run:
 
 <code>./stage2.sh</code>
