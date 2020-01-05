@@ -44,6 +44,7 @@ wget https://github.com/sakaki-/bcm2711-kernel/releases/download/4.19.89.2019122
 mkdir /tmp/pi-kernel
 tar xf bcm2711-kernel-4.19.89.20191224.tar.xz -C /tmp/pi-kernel/
 cp -r /tmp/pi-kernel/boot/* /mnt/boot/
+mv /mnt/boot/kernel*.img /mnt/boot/kernel8.img
 mkdir /mnt/lib/modules
 cp -r /tmp/pi-kernel/lib/modules /mnt/lib/
 rm bcm2711-kernel-4.19.89.20191224.tar.xz
