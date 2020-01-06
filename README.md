@@ -5,6 +5,9 @@ There is no 'universal' image that supports both the Pi 3 and 4, you must downlo
 
 The source code includes three stage scripts: stage1.sh sets up the image, installs Debian, modifies fstab, hostname, and sources.list, and installs the bootloader and kernel. stage2.sh installs core Debian packages into the image as well as WiFi drivers for the Pi's wireless capabilities. stage3.sh unmounts the mount points for the image, allowing the image to be flashed to your SD card.
 
+Default username: debian
+Default password: debian
+
 ## Build instructions
 
 Use qemu-img to create a blank image of at least 3.5GB (more needed if you intend on preinstalling a desktop environment with the image):
