@@ -5,9 +5,14 @@ apt install console-setup keyboard-configuration sudo ssh curl wget dbus usbutil
 apt install wpasupplicant wireless-tools firmware-atheros firmware-brcm80211 firmware-libertas firmware-misc-nonfree firmware-realtek dhcpcd5 net-tools -y
 service dbus restart
 
-# OPTIONAL: Install desktop environment, doesn't have to be XFCE
+# Uncomment one of these to install a Desktop Environment
 
-#apt install task-xfce-desktop
+#apt install task-xfce-desktop -y # For XFCE
+#apt install task-gnome-desktop -y # For GNOME
+#apt install task-kde-desktop-y # For KDE Plasma
+#apt install task-mate-desktop -y # For MATE
+#apt install task-lxde-desktop -y # For LXDE
+#apt install task-lxqt-desktop -y # For LXQT
 
 # Setup default user; this step does require a bit of user interaction for password and user info
 
