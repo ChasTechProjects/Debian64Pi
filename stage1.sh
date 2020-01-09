@@ -38,16 +38,15 @@ mkdir /tmp/pi-bootloader/
 dpkg-deb -x raspberrypi-bootloader_1.20190925-2_armhf.deb /tmp/pi-bootloader/
 cp /tmp/pi-bootloader/boot/* /mnt/boot/
 rm raspberrypi-bootloader_1.20190925-2_armhf.deb
-rm -r /tmp/pi-bootloader
 
-wget https://github.com/sakaki-/bcm2711-kernel/releases/download/4.19.89.20191224/bcm2711-kernel-4.19.89.20191224.tar.xz
+wget https://github.com/sakaki-/bcm2711-kernel/releases/download/4.19.93.20200107/bcm2711-kernel-4.19.93.20200107.tar.xz
 mkdir /tmp/pi-kernel
-tar xf bcm2711-kernel-4.19.89.20191224.tar.xz -C /tmp/pi-kernel/
+tar xf bcm2711-kernel-4.19.93.20200107.tar.xz -C /tmp/pi-kernel/
 cp -r /tmp/pi-kernel/boot/* /mnt/boot/
 mv /mnt/boot/kernel*.img /mnt/boot/kernel8.img
 mkdir /mnt/lib/modules
 cp -r /tmp/pi-kernel/lib/modules /mnt/lib/
-rm bcm2711-kernel-4.19.89.20191224.tar.xz
+rm bcm2711-kernel-4.19.93.20200107.tar.xz
 rm -r /tmp/pi-kernel
 
 ## Comment or remove completely the above kernel setup and uncomment the kernel setup below to setup the image to run on the Pi 3 instead of the Pi 4.
