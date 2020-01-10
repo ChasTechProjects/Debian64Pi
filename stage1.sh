@@ -63,7 +63,7 @@ rm -r /tmp/pi-kernel
 # Setup config.txt and cmdline.txt
 
 echo "disable_overscan=1
-#dtoverlay=vc4-kms-v3d" >> /mnt/boot/config.txt
+#dtoverlay=vc4-fkms-v3d" >> /mnt/boot/config.txt
 
 echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait" >> /mnt/boot/cmdline.txt
 
