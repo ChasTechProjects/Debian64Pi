@@ -51,13 +51,13 @@ rm -r /tmp/pi-kernel
 
 ## Comment or remove completely the above kernel setup and uncomment the kernel setup below to setup the image to run on the Pi 3 instead of the Pi 4.
 
-#wget https://github.com/sakaki-/bcmrpi3-kernel/releases/download/4.19.89.20191224/bcmrpi3-kernel-4.19.89.20191224.tar.xz
+#wget https://github.com/sakaki-/bcmrpi3-kernel/releases/download/4.19.97.20200128/bcmrpi3-kernel-4.19.97.20200128.tar.xz
 #mkdir /tmp/pi-kernel
-#tar xf bcmrpi3-kernel-4.19.89.20191224.tar.xz -C /tmp/pi-kernel/
+#tar xf bcmrpi3-kernel-4.19.97.20200128.tar.xz -C /tmp/pi-kernel/
 #cp -r /tmp/pi-kernel/boot/* /mnt/boot/
 #mkdir /mnt/lib/modules
 #cp -r /tmp/pi-kernel/lib/modules /mnt/lib/
-#rm bcmrpi3-kernel-4.19.89.20191224.tar.xz
+#rm bcmrpi3-kernel-4.19.97.20200128.tar.xz
 #rm -r /tmp/pi-kernel
 
 # Setup config.txt and cmdline.txt
