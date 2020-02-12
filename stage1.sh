@@ -33,7 +33,7 @@ deb http://ftp.debian.org/debian buster-backports main
 
 # Setup bootloader and kernel
 
-wget http://archive.raspberrypi.org/debian/pool/main/r/raspberrypi-firmware/raspberrypi-bootloader_1.20190925-2_armhf.deb
+wget http://archive.raspberrypi.org/debian/pool/main/r/raspberrypi-firmware/raspberrypi-bootloader_1.20200212-1_armhf.deb
 mkdir /tmp/pi-bootloader/
 dpkg-deb -x raspberrypi-bootloader_1.20190925-2_armhf.deb /tmp/pi-bootloader/
 cp /tmp/pi-bootloader/boot/* /mnt/boot/
