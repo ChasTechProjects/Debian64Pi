@@ -17,7 +17,8 @@ echo "proc            /proc           proc    defaults          0       0
 /dev/mmcblk0p1  /boot           vfat    defaults          0       2
 /dev/mmcblk0p2  /               ext4    defaults,noatime  0       1" >> /mnt/etc/fstab
 
-echo "debian-rpi64" >> /mnt/etc/hostname
+echo "raspberrypi" >> /mnt/etc/hostname
+echo "127.0.0.1 raspberrypi" >> /mnt/etc/hosts 
 
 echo "deb http://deb.debian.org/debian/ buster main contrib non-free
 #deb-src http://deb.debian.org/debian/ buster main contrib non-free
