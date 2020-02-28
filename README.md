@@ -12,7 +12,7 @@ Default password: debian
 
 Before doing next step, install this packages:
 
-<code>sudo apt-get install qemu-utils debootstrap qemu-user-static schroot</code>
+<code>sudo apt-get install debootstrap gparted qemu-utils qemu-user-static schroot</code>
 
 ## Build instructions
 
