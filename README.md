@@ -8,6 +8,12 @@ The source code includes three stage scripts: stage1.sh sets up the image, insta
 Default username: debian
 Default password: debian
 
+## Install needed tools
+
+Before doing next step, install this packages:
+
+<code>sudo apt-get install debootstrap gparted qemu-utils qemu-user-static schroot</code>
+
 ## Build instructions
 
 Use qemu-img to create a blank image of at least 3.5GB (more needed if you intend on preinstalling a desktop environment with the image):
