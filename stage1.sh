@@ -65,8 +65,13 @@ rm -r /tmp/pi-kernel
 
 # Setup config.txt and cmdline.txt
 
-echo "disable_overscan=1
-#dtoverlay=vc4-fkms-v3d" >> /mnt/boot/config.txt
+echo "[pi4]
+# Enable DRM VC4 V3D driver on top of the dispmanx display stack
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+arm_64bit=1
+# differentiate from Pi3 64-bit kernels
+kernel=kernel8-p4.img" >> /mnt/boot/config.txt
 
 echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait" >> /mnt/boot/cmdline.txt
 
