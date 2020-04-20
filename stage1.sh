@@ -39,14 +39,17 @@ dpkg-deb -x raspberrypi-bootloader_1.20190925-2_armhf.deb /tmp/pi-bootloader/
 cp /tmp/pi-bootloader/boot/* /mnt/boot/
 rm raspberrypi-bootloader_1.20190925-2_armhf.deb
 
-wget https://github.com/sakaki-/bcm2711-kernel/releases/download/4.19.93.20200107/bcm2711-kernel-4.19.93.20200107.tar.xz
+VERSION=4.19.113.20200414
+PATCH='-bis'
+
+wget https://github.com/sakaki-/bcm2711-kernel${PATCH}/releases/download/${VERSION}/bcm2711-kernel${PATCH}-${VERSION}.tar.xz
 mkdir /tmp/pi-kernel
-tar xf bcm2711-kernel-4.19.93.20200107.tar.xz -C /tmp/pi-kernel/
+tar xf bcm2711-kernel${PATCH}-${VERSION}.tar.xz -C /tmp/pi-kernel/
 cp -r /tmp/pi-kernel/boot/* /mnt/boot/
 mv /mnt/boot/kernel*.img /mnt/boot/kernel8.img
 mkdir /mnt/lib/modules
 cp -r /tmp/pi-kernel/lib/modules /mnt/lib/
-rm bcm2711-kernel-4.19.93.20200107.tar.xz
+rm bcm2711-kernel${PATCH}-${VERSION}.tar.xz
 rm -r /tmp/pi-kernel
 
 ## Comment or remove completely the above kernel setup and uncomment the kernel setup below to setup the image to run on the Pi 3 instead of the Pi 4.
@@ -62,8 +65,13 @@ rm -r /tmp/pi-kernel
 
 # Setup config.txt and cmdline.txt
 
-echo "disable_overscan=1
-#dtoverlay=vc4-fkms-v3d" >> /mnt/boot/config.txt
+echo "[pi4]
+# Enable DRM VC4 V3D driver on top of the dispmanx display stack
+dtoverlay=vc4-fkms-v3d
+max_framebuffers=2
+arm_64bit=1
+# differentiate from Pi3 64-bit kernels
+kernel=kernel8-p4.img" >> /mnt/boot/config.txt
 
 echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline rootwait" >> /mnt/boot/cmdline.txt
 
@@ -71,4 +79,5 @@ echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0
 
 cp stage2.sh /mnt/
 echo "Run stage2.sh in chroot for stage 2."
-chroot /mnt
+chroot /mnt /bin/bash /stage2.sh
+./stage3.sh
