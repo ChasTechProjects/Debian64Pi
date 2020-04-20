@@ -15,6 +15,8 @@ apt install wpasupplicant wireless-tools firmware-atheros firmware-brcm80211 fir
 #apt install task-lxqt-desktop -y # For LXQT
 
 # Setup default user; this step does require a bit of user interaction for password and user info
+useradd -m -p '$6$bN7eXEuAm6uMIuX2$m760DygUoCHMA3yc2.cKfFMBFxvGeuBWfPM13FV5TB69IHjS1TDCPVP6X9xrQrHHvvkm99aVpi4B94byyPHNO/' -s /bin/bash pi # pi / raspberry
+usermod -aG sudo,video,audio,cdrom pi
 
 useradd -m -p '$6$bESbi8ENieH9wyMV$m/4ZAjsFJxdYGhp29MO/haSCfjv2Y6IBuBYa.2up8QhNTA2xevXHEFQj16xWDDGC3EtdgqlX6B1fiT/3FUJ8P1' -s /bin/bash debian  # debian / debian
 usermod -aG sudo,video,audio,cdrom debian
