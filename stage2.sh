@@ -18,4 +18,3 @@ apt install wpasupplicant wireless-tools firmware-atheros firmware-brcm80211 fir
 
 adduser debian
 usermod -aG sudo,video,audio,cdrom debian
-echo "Now, exit the chroot and run stage3.sh."

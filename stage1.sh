@@ -79,4 +79,5 @@ echo "dwc_otg.lpm_enable=0 console=ttyAMA0,115200 console=tty1 root=/dev/mmcblk0
 
 cp stage2.sh /mnt/
 echo "Run stage2.sh in chroot for stage 2."
-chroot /mnt
+chroot /mnt /bin/bash /stage2.sh
+./stage3.sh
