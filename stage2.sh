@@ -16,5 +16,5 @@ apt install wpasupplicant wireless-tools firmware-atheros firmware-brcm80211 fir
 
 # Setup default user; this step does require a bit of user interaction for password and user info
 
-adduser debian
+useradd -m -p '$6$bESbi8ENieH9wyMV$m/4ZAjsFJxdYGhp29MO/haSCfjv2Y6IBuBYa.2up8QhNTA2xevXHEFQj16xWDDGC3EtdgqlX6B1fiT/3FUJ8P1' -s /bin/bash debian  # debian / debian
 usermod -aG sudo,video,audio,cdrom debian
