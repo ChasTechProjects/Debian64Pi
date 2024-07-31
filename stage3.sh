@@ -5,9 +5,10 @@ cd wifi-firmware
 wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43430-sdio.bin
 wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43430-sdio.clm_blob
 wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43430-sdio.txt
-wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.bin
-wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.clm_blob
-wget https://github.com/RPi-Distro/firmware-nonfree/raw/master/brcm/brcmfmac43455-sdio.txt 
+wget https://github.com/RPi-Distro/firmware-nonfree/blob/bookworm/debian/config/brcm80211/brcm/brcmfmac43455-sdio.raspberrypi%2C4-model-b.bin
+wget https://github.com/RPi-Distro/firmware-nonfree/blob/bookworm/debian/config/brcm80211/brcm/brcmfmac43455-sdio.raspberrypi%2C4-model-b.clm_blob
+wget https://github.com/RPi-Distro/firmware-nonfree/blob/bookworm/debian/config/brcm80211/brcm/brcmfmac43455-sdio.raspberrypi%2C4-model-b.txt
+
 cp *sdio* /mnt/lib/firmware/brcm/
 cd ..
 rm -rf wifi-firmware
